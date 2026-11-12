@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MyVossieMarketplace</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="#/home" aria-label="MyVossieMarketplace home">
+    <span class="logo-c"><img src="eduvos-logo.png" alt="Eduvos" onerror="this.remove()"></span>
+    <span class="brand-name">MyVossie<b>Marketplace</b></span>
+    <span class="tag-buyer">Buyer</span>
+  </a>
+  <nav id="links" class="links" aria-label="Main">
+    <a href="#/home" data-route="home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8M5 10v10h5v-6h4v6h5V10"/></svg><span>Home</span></a>
+    <a href="#/marketplace" data-route="marketplace"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16l-1 4H5zM5 11v9h14v-9M9 20v-5h6v5"/></svg><span>Marketplace</span></a>
+    <a href="#/orders" data-route="orders"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4zM3 7v10l9 4 9-4V7M12 11v10"/></svg><span>My Orders</span></a>
+    <button type="button" id="profile-btn" data-route="profile" aria-haspopup="menu" aria-expanded="false" aria-controls="pmenu"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><span>Profile</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+  </nav>
+  <div class="nav-actions">
+    <a class="navtxt hide-m" id="seller-link" href="#/become-seller">Become a Seller</a>
+    <a class="navtxt hide-m" id="courier-link" href="#/become-courier">Become a Courier</a>
+    <button class="cart-btn" id="cart-btn" aria-label="Open cart"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2 12h11l2-8H6"/><circle cx="9" cy="20" r="1"/><circle cx="17" cy="20" r="1"/></svg><span id="cart-count" class="badge">0</span></button>
+  </div>
+</header>
+<div id="pmenu" class="pmenu" role="menu" aria-label="Profile menu" hidden>
+  <a role="menuitem" href="#/profile">My Profile</a>
+  <a role="menuitem" href="#/orders">Order History</a>
+  <a role="menuitem" href="#/returns">Returns</a>
+  <button role="menuitem" type="button" data-opencart>Cart</button>
+  <a role="menuitem" href="#/signin-seller">Sign in to Seller Account</a>
+  <a role="menuitem" href="#/signin-courier">Sign in to Courier Account</a>
+  <button role="menuitem" type="button" class="logout" data-logout>Log Out</button>
+</div>
+<main id="app" tabindex="-1"></main>
+<footer class="site-foot">
+  <div class="sf-in">
+    <div class="sf-brand">
+      <a class="brand" href="#/home" aria-label="MyVossieMarketplace home"><span class="logo-c"><img src="eduvos-logo.png" alt="Eduvos" onerror="this.remove()"></span><span class="brand-name">MyVossie<b>Marketplace</b></span></a>
+      <p><em>Find what you need. Sell what you don’t.</em></p>
+    </div>
+    <nav class="sf-col" aria-label="Marketplace"><h2>Marketplace</h2>
+      <a href="#/marketplace">Browse Products</a><a href="#/become-seller">Become a Seller</a><a href="#/become-courier">Become a Courier</a><a href="#/home" data-how>How It Works</a></nav>
+    <nav class="sf-col" aria-label="Legal"><h2>Legal</h2>
+      <a href="#/terms">Terms &amp; Conditions</a><a href="#/privacy">Privacy Policy</a><a href="#/refunds">Returns &amp; Refunds</a></nav>
+    <nav class="sf-col" aria-label="My account"><h2>My Account</h2>
+      <a href="#/profile">My Profile</a><a href="#/orders">My Orders</a><a href="seller.html#/listings">My Listings</a><a href="#/signin-courier">Log In as Courier</a><a href="#/signin-seller">Log In as Seller</a><a href="#/signin-admin">Log In as Admin</a></nav>
+  </div>
+  <p class="sf-copy">© 2026 MyVossieMarketplace. All rights reserved.</p>
+</footer>
+<aside id="drawer" class="drawer" aria-label="Shopping cart" hidden></aside>
+<div id="scrim" class="scrim" hidden></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="auth.js"></script>
+<script src="buyer.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MyVossieMarketplace – Seller</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="seller.css">
+</head>
+<body class="seller">
+<header class="nav">
+  <a class="brand" href="#/overview" aria-label="Seller dashboard home">
+    <span class="logo-c"><img src="eduvos-logo.png" alt="Eduvos" onerror="this.remove()"></span>
+    <span class="brand-name">MyVossie<b>Marketplace</b></span>
+    <span class="tag-seller">Seller</span>
+  </a>
+  <nav id="links" class="links" aria-label="Seller">
+    <a href="#/overview" data-route="overview"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8M5 10v10h5v-6h4v6h5V10"/></svg><span>Overview</span></a>
+    <a href="#/listings" data-route="listings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16l-1 4H5zM5 11v9h14v-9M9 20v-5h6v5"/></svg><span><i class="lg">My Listings</i><i class="sm">Listings</i></span></a>
+    <a href="#/orders" data-route="orders"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4h8v3H8zM6 5H5v16h14V5h-1M9 12h6M9 16h6"/></svg><span><i class="lg">Manage Orders</i><i class="sm">Orders</i></span></a>
+    <a href="#/courier" data-route="courier"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6h12v10H2zM14 9h4l4 4v3h-8z"/><circle cx="7" cy="18" r="1.6"/><circle cx="18" cy="18" r="1.6"/></svg><span><i class="lg">Handover to Courier</i><i class="sm">Courier</i></span></a>
+    <a href="#/profile" data-route="profile"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><span><i class="lg">Seller Profile</i><i class="sm">Profile</i></span></a>
+  </nav>
+  <div class="nav-actions">
+    <a class="navtxt hide-m" href="Index.html#/home">Switch to Buyer</a>
+    <a class="navtxt hide-m" href="courier.html">Become a Courier</a>
+    <a class="cart-btn" href="#/orders" aria-label="New orders"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 17V11a6 6 0 0112 0v6l2 2H4zM10 21h4"/></svg><span id="pend-count" class="badge">0</span></a>
+  </div>
+</header>
+<main id="app" tabindex="-1"></main>
+<dialog id="dlg"></dialog>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="auth.js"></script>
+<script src="seller.js"></script>
+</body>
+</html>

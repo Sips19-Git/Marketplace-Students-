@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MyVossieMarketplace – Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin">
+<header class="nav">
+  <a class="brand" href="#/dashboard" aria-label="Admin dashboard home">
+    <span class="logo-c"><img src="eduvos-logo.png" alt="Eduvos" onerror="this.remove()"></span>
+    <span class="brand-name">MyVossie<b>Marketplace</b></span>
+    <span class="tag-admin">Admin</span>
+  </a>
+  <nav id="links" class="links" aria-label="Admin">
+    <a href="#/dashboard" data-route="dashboard"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h8v8H3zM13 3h8v5h-8zM13 11h8v10h-8zM3 14h8v7H3z"/></svg><span>Dashboard</span></a>
+    <a href="#/payments" data-route="payments"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v12H3zM3 7l3-4h12l3 4M16 13h2"/></svg><span><i class="lg">Payments &amp; Payouts</i><i class="sm">Payments</i></span><span id="pay-badge" class="nbadge" hidden>0</span></a>
+    <a href="#/orders" data-route="orders"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4zM3 7v10l9 4 9-4V7M12 11v10"/></svg><span>Orders</span></a>
+    <a href="#/listings" data-route="listings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12V4h8l10 10-8 8zM7.5 8.5h.01"/></svg><span>Listings</span></a>
+    <a href="#/users" data-route="users"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-3.5 3-5.5 7-5.5s7 2 7 5.5M16 4.5a3.5 3.5 0 010 7M18 14.8c2.4.6 4 2.2 4 5.2"/></svg><span>Users</span></a>
+  </nav>
+  <div class="nav-actions">
+    <!-- Paths assume this folder sits next to the other pages (e.g. /admin/). Change if your folders differ. -->
+    <a class="navtxt hide-m" href="../Index.html#/home">Switch to Buyer</a>
+    <a class="navtxt hide-m" href="../seller.html">Switch to Seller</a>
+    <a class="navtxt hide-m" href="../courier.html">Switch to Courier</a>
+    <button type="button" class="navtxt" data-act="signout" style="background:none;border:0;cursor:pointer;font-family:inherit">Sign out</button>
+  </div>
+</header>
+<main id="app" class="wrap" tabindex="-1"></main>
+<dialog id="dlg" aria-labelledby="dlg-title"></dialog>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="auth.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MyVossieMarketplace – Courier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="seller.css">
+<link rel="stylesheet" href="courier.css">
+</head>
+<body class="courier">
+<header class="nav">
+  <a class="brand" href="#/overview" aria-label="Courier dashboard home">
+    <span class="logo-c"><img src="eduvos-logo.png" alt="Eduvos" onerror="this.remove()"></span>
+    <span class="brand-name">MyVossie<b>Marketplace</b></span>
+    <span class="tag-courier">Courier</span>
+  </a>
+  <nav id="links" class="links" aria-label="Courier">
+    <a href="#/overview" data-route="overview"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8M5 10v10h5v-6h4v6h5V10"/></svg><span>Overview</span></a>
+    <a href="#/jobs" data-route="jobs"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16v12H4zM9 8V4h6v4M4 13h16"/></svg><span><i class="lg">Available Jobs</i><i class="sm">Jobs</i></span></a>
+    <a href="#/deliveries" data-route="deliveries"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6h12v10H2zM14 9h4l4 4v3h-8z"/><circle cx="7" cy="18" r="1.6"/><circle cx="18" cy="18" r="1.6"/></svg><span><i class="lg">My Deliveries</i><i class="sm">Deliveries</i></span></a>
+    <a href="#/earnings" data-route="earnings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M17 6H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg><span>Earnings</span></a>
+    <a href="#/profile" data-route="profile"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><span><i class="lg">Courier Profile</i><i class="sm">Profile</i></span></a>
+  </nav>
+  <div class="nav-actions">
+    <a class="navtxt hide-m" href="Index.html#/home">Switch to Buyer</a>
+    <a class="navtxt hide-m" href="seller.html">Switch to Seller</a>
+    <a class="cart-btn" href="#/notifications" aria-label="Notifications"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 17V11a6 6 0 0112 0v6l2 2H4zM10 21h4"/></svg><span id="note-count" class="badge">0</span></a>
+  </div>
+</header>
+<main id="app" tabindex="-1"></main>
+<dialog id="dlg"></dialog>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<!-- Supabase Realtime (optional): add <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> here and fill CONFIG.SUPABASE in courier.js -->
+<script src="auth.js"></script>
+<script src="courier.js"></script>
+</body>
+</html>

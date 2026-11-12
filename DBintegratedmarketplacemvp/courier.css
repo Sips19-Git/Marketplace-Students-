@@ -1,0 +1,29 @@
+/* Courier dashboard. Loads AFTER style.css and seller.css: reuses the seller components (banner, stats, rows, chips, orders, dialog) and swaps the accent to dark blue. */
+:root{--accent:#1e40af;--accent-d:#1a3691;--accent-l:#e3e9f9}
+/* header: identical to the seller's (same rules, same positions); only the accent colour differs */
+.tag-courier{font:700 .72rem var(--font);background:var(--accent);color:#fff;padding:2px 8px;border-radius:2px;flex:none;box-shadow:0 0 0 1px rgba(255,255,255,.4)}
+@media(max-width:400px){.tag-courier{display:none}}
+/* job + delivery cards */
+.kvs{display:grid;grid-template-columns:1fr 1fr;gap:12px 20px}
+.kv small{display:block;color:var(--muted);font-size:.8rem}.kv span{overflow-wrap:anywhere}
+.order[data-s=new]{border-left-color:var(--accent)}
+.sec-h{display:flex;align-items:center;gap:8px;margin:22px 0 10px}.sec-h h2{margin:0;font-size:1.15rem}
+.row.unread{background:var(--accent-l);margin:0 -12px;padding:14px 12px;border-radius:var(--r)}
+.row.unread .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);flex:none}
+.gate{max-width:640px;margin:28px auto}
+.chk.block{align-items:flex-start}
+@media(max-width:640px){.kvs{grid-template-columns:1fr}}
+
+/* courier hero: courier.png shown in full (never cropped) at the banner's normal height, with the blue tint.
+   Same layout as the seller hero; the fade is short because the left edge of this photo has a person in it. */
+.courier .banner{display:flex;align-items:center;min-height:260px;background:var(--brand-d)}
+.courier .banner::before{inset:0 0 0 auto;width:auto;aspect-ratio:1918/820;background:linear-gradient(90deg,rgba(21,48,93,.72),rgba(21,48,93,.5)),url(courier.png) center/100% 100% no-repeat;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%);mask-image:linear-gradient(90deg,transparent,#000 7%)}
+.courier .banner>div{z-index:1;max-width:calc(100% - 600px);padding:32px}
+.courier .banner h1{font-size:clamp(1.6rem,2.8vw,2.3rem)}
+/* narrower screens: picture on top at its natural ratio, text below */
+@media(max-width:1060px){
+.courier .banner{display:block;min-height:0}
+.courier .banner::before{position:static;display:block;width:100%;-webkit-mask-image:none;mask-image:none}
+.courier .banner>div{max-width:none;padding:22px 24px 28px}
+}
+@media(max-width:640px){.courier .banner>div{padding:18px 20px 24px}}

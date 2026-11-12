@@ -1,0 +1,4 @@
+[
+{"id":"s1","name":"Calculus textbook (8th ed.)","price":280,"description":"Light highlighting, no torn pages.","image":"","campus":"Potchefstroom","category":"Books","stock":2,"seller":{"name":"Sample seller"},"createdAt":"2026-10-10"},
+{"id":"s2","name":"Desk lamp","price":90,"description":"Adjustable arm, LED bulb included.","image":"","campus":"Potchefstroom","category":"Dorm","stock":0,"seller":{"name":"Sample seller"},"createdAt":"2026-10-12"}
+]

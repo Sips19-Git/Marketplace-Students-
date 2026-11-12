@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Database connection test</title>
+<style>body{font:16px/1.5 system-ui,sans-serif;max-width:640px;margin:40px auto;padding:0 16px}li{margin:6px 0}.ok{color:#157f4b}.bad{color:#c0332b}</style></head>
+<body><h1>Database connection test</h1><p>Open this page, then check every line is green. Delete it before launch.</p><ul id="out"></ul>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="supabase-config.js"></script>
+<script src="supabase-client.js"></script>
+<script>
+const out = document.getElementById('out');
+const line = (ok, msg) => { const li = document.createElement('li'); li.className = ok ? 'ok' : 'bad'; li.textContent = (ok ? '✓ ' : '✗ ') + msg; out.appendChild(li); };
+(async () => {
+  const run = async (label, fn) => { try { line(true, label + ': ' + await fn()); } catch (e) { line(false, label + ': ' + (e.message || e)); } };
+  await run('Campuses', async () => (await MVM.ref.campuses()).length + ' found');
+  await run('Banks', async () => (await MVM.ref.banks()).length + ' found');
+  await run('Categories', async () => (await MVM.ref.categories()).length + ' found');
+  await run('Payment methods', async () => (await MVM.ref.paymentMethods()).map(m => m.label).join(', '));
+  await run('Marketplace feed', async () => (await MVM.read.marketplace()).length + ' listings');
+  await run('Signed in?', async () => (await MVM.auth.getUser()) ? 'yes' : 'no (expected for this test)');
+})();
+</script></body></html>
